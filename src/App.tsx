@@ -11,7 +11,7 @@ function App() {
         <Routes>
           <Route path="*" element={<NotFoundPage />} />
           <Route path="/" element={<Homepage />} />
-          <Route path="/today" element={<DailyPlanPage />} />
+          <Route path="/today/:username" element={<DailyPlanPage />} />
         </Routes>
       </div>
     </>

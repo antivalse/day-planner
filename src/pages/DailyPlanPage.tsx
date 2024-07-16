@@ -3,6 +3,7 @@
  */
 
 import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import ActivityOptions from "../components/ActivityOptions";
 import TodoTodayList from "../components/TodoTodayList";
 import { Option } from "../types/Options";
@@ -12,6 +13,11 @@ const DailyPlanPage = () => {
   const [activityOptions, setActivityOptions] = useState<Option[]>([]);
   const [chosenActivities, setChosenActivities] = useState<Option[]>([]);
   const [toggle, setToggle] = useState(false);
+
+  const { username } = useParams();
+
+  // create navigate instance
+  const navigate = useNavigate();
 
   // set today's date and format it
   const timestamp = Date.now();
@@ -62,7 +68,7 @@ const DailyPlanPage = () => {
   return (
     <>
       {" "}
-      <h1>Welcome to your daily planner!</h1>
+      <h1>Welcome to your daily planner, {username}!</h1>
       <h2>{formattedDate}</h2>
       <ActivityOptions
         handleToggle={handleToggleOption}
@@ -72,6 +78,7 @@ const DailyPlanPage = () => {
         handleToggle={handleToggleOption}
         options={inactiveOptions}
       />
+      <button onClick={() => navigate("/")}>Log out</button>
     </>
   );
 };
