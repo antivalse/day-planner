@@ -29,7 +29,7 @@ const LogInForm = () => {
           <input
             type="text"
             required
-            onChange={(e) => setUser(e.target.value)}
+            onChange={(e) => setUser(e.target.value.trim())}
             value={user}
           />
         </label>
