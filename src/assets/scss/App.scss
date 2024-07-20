@@ -1,8 +1,13 @@
 @import "_LoadingSpinner";
+@import "_Navbar";
 
 h1,
 h2 {
   margin: 30px;
+}
+
+#container {
+  margin-top: 10%;
 }
 
 form {
