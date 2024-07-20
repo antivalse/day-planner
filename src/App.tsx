@@ -4,10 +4,13 @@ import NotFoundPage from "./pages/NotFoundPage";
 import Homepage from "./pages/Homepage";
 import DailyPlanPage from "./pages/DailyPlanPage";
 import NavBar from "./components/NavBar";
+import useTheme from "./hooks/useTheme";
 
 function App() {
+  // Access isDarkMode from useTheme hook
+  const { isDarkMode } = useTheme();
   return (
-    <>
+    <div id="App" className={isDarkMode ? "dark-theme" : ""}>
       <NavBar />
       <div id="container">
         <Routes>
@@ -16,7 +19,7 @@ function App() {
           <Route path="/today/:username" element={<DailyPlanPage />} />
         </Routes>
       </div>
-    </>
+    </div>
   );
 }
 

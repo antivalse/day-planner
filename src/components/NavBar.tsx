@@ -2,21 +2,19 @@
  * Navbar component
  */
 
-import { useState } from "react";
+import useTheme from "../hooks/useTheme";
 
 const NavBar = () => {
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  // Access useTheme hook in order to set theme and use toggle function
 
-  const toggleTheme = () => {
-    setIsDarkTheme(!isDarkTheme);
-    document.body.className = isDarkTheme ? "" : "dark-theme";
-  };
+  const { isDarkMode, toggleTheme } = useTheme();
+
   return (
     <nav className="navbar">
       <div className="navbar-brand">My Daily Planner</div>
       <div className="navbar-buttons">
         <button onClick={toggleTheme}>
-          {isDarkTheme ? "Light Theme" : "Dark Theme"}
+          {isDarkMode ? "Light Theme" : "Dark Theme"}
         </button>
         <button>Logout</button>
       </div>
