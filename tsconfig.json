@@ -5,6 +5,9 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "typeRoots": [
+      "./node_modules/@types"
+    ] /* Specify multiple folders that act like './node_modules/@types'. */,
 
     /* Bundler mode */
     "moduleResolution": "bundler",
