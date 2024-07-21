@@ -29,7 +29,7 @@ const LogInForm = () => {
       {!isLoading && (
         <div>
           <h1>Log in to start planning your day</h1>
-          <form id="loginForm" onSubmit={handleSubmit}>
+          <form id="login-form" onSubmit={handleSubmit}>
             <label htmlFor="username">
               Username:
               <input
