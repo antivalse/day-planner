@@ -11,7 +11,7 @@ const Homepage = () => {
       <LogInForm />
       <div id="create-account-section">
         <h2>
-          New to Daily Planner?{" "}
+          New to My Daily Planner?{" "}
           <Link className="links" to="/signup">
             Create account
           </Link>
