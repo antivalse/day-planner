@@ -1,6 +1,9 @@
 #loading-container {
   display: flex;
   flex-direction: column;
+  position: fixed;
+  top: 50%;
+  right: 50%;
 }
 
 #loading-spinner-wrapper {

@@ -1,5 +1,5 @@
 /**
- * Theme Context
+ * Theme Context instance and Context Provider Function
  */
 
 import { createContext, useEffect, useState } from "react";
