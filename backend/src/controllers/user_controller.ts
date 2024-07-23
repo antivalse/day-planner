@@ -11,17 +11,9 @@ import { createUser } from "../services/user_service";
 
 export const registerUser = async (req: Request, res: Response) => {
   try {
-    await createUser({
-      username: "user",
-      password: "password",
-    });
+    const user = await createUser(req.body);
 
-    res.status(201).send({
-      status: "success",
-      data: {
-        username: "user",
-      },
-    });
+    res.status(201).send(user);
   } catch (err) {
     return res.status(500).send({
       status: "error",
