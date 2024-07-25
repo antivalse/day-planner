@@ -12,7 +12,7 @@ const router = express.Router();
 /**
  * GET /
  */
-router.get("/", (req, res) => {
+router.get("/api", (req, res) => {
   res.send({
     message: "You did it! This is a route!🫨 ",
   });
@@ -23,6 +23,6 @@ router.get("/", (req, res) => {
  * Register a new user
  */
 
-router.post("/register", registerUser);
+router.post("/api/register", registerUser);
 
 export default router;
