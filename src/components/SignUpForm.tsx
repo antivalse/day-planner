@@ -1,7 +1,6 @@
 const SignUpForm = () => {
   return (
     <>
-      <h1>Create account</h1>
       <form id="signup-form">
         <label htmlFor="username">
           Create username:

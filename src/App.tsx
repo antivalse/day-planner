@@ -5,7 +5,7 @@ import Homepage from "./pages/Homepage";
 import DailyPlanPage from "./pages/DailyPlanPage";
 import NavBar from "./components/NavBar";
 import useTheme from "./hooks/useTheme";
-import SignUpForm from "./components/SignUpForm";
+import SignUpPage from "./pages/SignUpPage";
 
 function App() {
   // Access isDarkMode from useTheme hook
@@ -18,7 +18,7 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
           <Route path="/" element={<Homepage />} />
           <Route path="/today/:username" element={<DailyPlanPage />} />
-          <Route path="/signup" element={<SignUpForm />} />
+          <Route path="/signup" element={<SignUpPage />} />
         </Routes>
       </div>
     </div>
