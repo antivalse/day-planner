@@ -7,7 +7,17 @@ import { NewUser } from "../types/user.types";
  */
 
 export const createUser = async (data: NewUser) => {
-  return await prisma.user.create({
-    data,
-  });
+  try {
+    // Perform any necessary validation on data before inserting into the database
+    if (!data.username || !data.password) {
+      throw new Error("Invalid data: Username and password are required");
+    }
+
+    return await prisma.user.create({
+      data,
+    });
+  } catch (error) {
+    console.error("Error creating user:", error);
+    throw error;
+  }
 };

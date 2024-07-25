@@ -1,6 +1,6 @@
 import express from "express";
 import path from "path";
-// import routes from "./routes";
+import routes from "./routes";
 
 // Detect environment
 const NODE_ENV = process.env.NODE_ENV || "development";
@@ -22,7 +22,7 @@ app.use(express.json());
 // Serve frontend
 app.use(express.static(frontendDistPath));
 
-// Use dem routes
-// app.use(routes);
+// Use routes
+app.use(routes);
 
 export default app;
