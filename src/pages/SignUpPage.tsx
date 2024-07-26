@@ -2,6 +2,7 @@
  * Sign up page
  */
 
+import { useState } from "react";
 import SignUpForm from "../components/SignUpForm";
 import { registerUser } from "../services/UserAPI";
 
@@ -11,8 +12,8 @@ interface NewUser {
 }
 
 function SignUpPage() {
-  // const [usernameInput, setUsernameInput] = useState("");
-  // const [passwordInput, setPasswordInput] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const addUser = async (user: NewUser) => {
     try {
       await registerUser(user);
@@ -28,12 +29,17 @@ function SignUpPage() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("form submitted");
-    addUser({ username: "Georgina", password: "Barbson" });
+    addUser({ username, password });
+    console.log("new user info is: ", username, password);
   };
   return (
     <>
       <h1>Create account</h1>
-      <SignUpForm handleSubmit={handleSubmit} />
+      <SignUpForm
+        handleSubmit={handleSubmit}
+        setUsername={setUsername}
+        setPassword={setPassword}
+      />
     </>
   );
 }
